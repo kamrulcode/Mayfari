@@ -7,6 +7,11 @@ import { useNavigate } from "react-router-dom";
 function Checkout() {
   const { cart, subtotal, isEmpty, clearCart, totalItems } = useCart();
   const navigate = useNavigate();
+  const [savedAddresses] = useState(() => {
+    const saved = localStorage.getItem("mayfair-addresses");
+
+    return saved ? JSON.parse(saved) : [];
+  });
 
   const [formData, setFormData] = useState({
     email: "",
@@ -126,6 +131,45 @@ function Checkout() {
                 <input id="lastName" type="text" />
               </div>
             </div>
+            {savedAddresses.length > 0 && (
+              <div className="saved-addresses">
+                <h3>Saved Addresses</h3>
+
+                <div className="saved-address-list">
+                  {savedAddresses.map((address) => (
+                    <button
+                      type="button"
+                      key={address.id}
+                      onClick={() => {
+                        setFormData((prev) => ({
+                          ...prev,
+
+                          firstName: address.name.split(" ")[0],
+
+                          lastName: address.name.split(" ").slice(1).join(" "),
+
+                          phone: address.phone,
+
+                          address: address.address,
+
+                          city: address.city,
+
+                          postalCode: address.postalCode,
+                        }));
+                      }}
+                    >
+                      <strong>{address.name}</strong>
+
+                      <span>{address.address}</span>
+
+                      <span>
+                        {address.city}, {address.postalCode}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="form-group">
               <label htmlFor="address">Address</label>

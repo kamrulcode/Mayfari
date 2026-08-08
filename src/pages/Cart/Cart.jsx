@@ -1,4 +1,5 @@
 import useCart from "../../hooks/useCart";
+import "./Cart.scss";
 
 import CartItem from "../../components/Cart/CartItem";
 

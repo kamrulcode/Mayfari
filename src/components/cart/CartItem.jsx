@@ -1,4 +1,5 @@
 import useCart from "../../hooks/useCart";
+import "../../pages/Cart/Cart.scss";
 
 function CartItem({ item }) {
   const { updateQuantity, removeFromCart } = useCart();

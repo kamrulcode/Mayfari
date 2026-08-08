@@ -13,6 +13,7 @@ import OrderSuccess from "../pages/OrderSuccess/OrderSuccess";
 import OrderTracking from "../pages/OrderTracking/OrderTracking";
 import Account from "../pages/Account.jsx/Account";
 import MyOrders from "../pages/Account.jsx/MyOrders";
+import Addresses from "../pages/Account.jsx/Addresses/Addresses";
 
 export const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
       {
         path: "account/orders",
         element: <MyOrders />,
+      },
+      {
+        path: "account/addresses",
+        element: <Addresses />,
       },
     ],
   },

@@ -1,5 +1,6 @@
 import { calculateCart } from "../../utils/calculateCart";
 import useCart from "../../hooks/useCart";
+import "../../pages/Cart/Cart.scss";
 
 function CartSummary() {
   const { subtotal } = useCart();
@@ -11,7 +12,7 @@ function CartSummary() {
     { label: "Tax", value: tax },
   ];
   return (
-    <div>
+    <div className="cart-summary">
       {summary.map((item) => (
         <div key={item.label} className="summary-row">
           <span>{item.label}</span>
