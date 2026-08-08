@@ -1,0 +1,188 @@
+@use "../../styles/abstracts/variables" as *;
+
+.product-layout {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  align-items: start;
+}
+
+.gallery {
+  display: grid;
+
+  grid-template-columns: 100px 1fr;
+
+  gap: 20px;
+}
+
+.thumbs {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.thumbs img {
+  width: 100%;
+
+  aspect-ratio: 1;
+
+  object-fit: cover;
+
+  cursor: pointer;
+
+  border-radius: 12px;
+
+  border: 2px solid transparent;
+
+  transition: 0.3s;
+}
+
+.thumbs img.active {
+  border-color: #c6a96a;
+}
+
+.main-image {
+  background: #f8f8f6;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+}
+.main-image img {
+  width: 100%;
+
+  transition: 0.5s;
+}
+.main-image:hover img {
+  transform: scale(1.1);
+}
+.actions {
+  display: flex;
+
+  gap: 20px;
+
+  margin-top: 40px;
+}
+.wishlist {
+  width: 60px;
+
+  height: 60px;
+
+  border-radius: 50%;
+
+  border: 1px solid #ddd;
+}
+
+.cart {
+  flex: 1;
+
+  color: black;
+
+  border-radius: 999px;
+
+  transition: 0.35s;
+}
+.cart:hover {
+  color: #c6a96a;
+}
+.quantity {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-top: 30px;
+}
+.accordion {
+  margin-top: 120px;
+
+  border-top: 1px solid #eee;
+}
+
+.accordion button {
+  width: 100%;
+
+  padding: 25px 0;
+
+  text-align: left;
+
+  font-size: 22px;
+
+  font-family: $heading;
+
+  border-bottom: 1px solid #eee;
+}
+
+.accordion p {
+  padding: 0 0 25px;
+
+  line-height: 1.8;
+}
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .thumbs {
+    flex-direction: row;
+
+    order: 2;
+
+    overflow: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 20px;
+}
+
+.product-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-thumbnails button {
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+
+.product-thumbnails button.active {
+  border-color: #111;
+}
+
+.product-thumbnails img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-main-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.product-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -1,0 +1,38 @@
+@use "../../../styles/abstracts/variables" as *;
+
+.btn {
+  height: 56px;
+
+  padding-inline: 32px;
+
+  border-radius: $radius-full;
+
+  cursor: pointer;
+
+  transition: 0.35s;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.btn span {
+  position: relative;
+
+  z-index: 2;
+}
+.btn--primary {
+  background: $color-text;
+
+  color: white;
+}
+.btn--outline {
+  border: 1px solid $color-text;
+
+  background: transparent;
+}
+.btn--gold {
+  background: $color-gold;
+
+  color: white;
+}

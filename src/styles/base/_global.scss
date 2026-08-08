@@ -1,0 +1,10 @@
+@use "../abstracts/variables" as *;
+
+.container {
+  width: min(100% - 40px, $container);
+  margin-inline: auto;
+}
+
+section {
+  padding: 120px 0;
+}

@@ -1,0 +1,179 @@
+.account-page {
+  min-height: 100vh;
+  padding: 140px 0 100px;
+  background: #f8f8f6;
+}
+
+.account-container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
+
+.account-header {
+  margin-bottom: 70px;
+
+  span {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  h1 {
+    margin: 15px 0;
+    font-family: serif;
+    font-size: clamp(48px, 7vw, 90px);
+    font-weight: 400;
+  }
+
+  p {
+    max-width: 500px;
+    line-height: 1.7;
+    color: #666;
+  }
+}
+
+.account-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 80px;
+}
+
+.account-sidebar {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    padding: 18px 0;
+    border-bottom: 1px solid #ddd;
+
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
+
+    transition: 0.3s;
+
+    &:hover,
+    &.active {
+      padding-left: 10px;
+    }
+  }
+}
+
+.account-content {
+  min-width: 0;
+}
+
+.account-welcome {
+  margin-bottom: 50px;
+
+  span {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  h2 {
+    margin: 12px 0;
+    font-family: serif;
+    font-size: 42px;
+    font-weight: 400;
+  }
+
+  p {
+    max-width: 550px;
+    line-height: 1.7;
+    color: #666;
+  }
+}
+
+.account-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.account-card {
+  min-height: 210px;
+  padding: 30px;
+
+  background: white;
+  color: #111;
+  text-decoration: none;
+
+  border: 1px solid #eee;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+  }
+
+  span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #999;
+  }
+
+  h3 {
+    margin: 40px 0 12px;
+    font-family: serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  p {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+@media (max-width: 768px) {
+  .account-page {
+    padding: 110px 0 80px;
+  }
+
+  .account-header {
+    margin-bottom: 45px;
+
+    h1 {
+      font-size: 52px;
+    }
+  }
+
+  .account-layout {
+    display: block;
+  }
+
+  .account-sidebar {
+    margin-bottom: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    a {
+      padding: 14px 0;
+    }
+  }
+
+  .account-welcome {
+    margin-bottom: 35px;
+
+    h2 {
+      font-size: 36px;
+    }
+  }
+
+  .account-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .account-card {
+    min-height: 180px;
+
+    h3 {
+      margin-top: 30px;
+    }
+  }
+}

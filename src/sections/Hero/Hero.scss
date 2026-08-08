@@ -1,0 +1,277 @@
+@use "../../styles/abstracts/variables" as *;
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  background:
+    radial-gradient(circle at right, #fff5dd 0%, transparent 45%), #f8f8f6;
+  overflow: hidden;
+
+  position: relative;
+}
+
+.hero__container {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 60px;
+}
+
+.hero__subtitle {
+  display: inline-block;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: $gold;
+
+  margin-bottom: 20px;
+}
+
+.hero__title {
+  font-size: clamp(3.5rem, 8vw, 7rem);
+
+  line-height: 0.92;
+
+  letter-spacing: -3px;
+}
+
+.hero__text {
+  max-width: 500px;
+
+  font-size: 18px;
+
+  margin-bottom: 40px;
+}
+
+.hero__buttons {
+  display: flex;
+
+  gap: 20px;
+}
+
+.btn {
+  padding: 16px 34px;
+
+  border-radius: 50px;
+
+  transition: 0.35s;
+
+  font-weight: 600;
+  overflow: hidden;
+
+  position: relative;
+}
+
+.btn span {
+  position: relative;
+
+  z-index: 2;
+}
+.btn::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: 0;
+
+  width: 100%;
+
+  height: 0;
+
+  background: $gold;
+
+  transition: 0.4s;
+}
+.btn:hover::before {
+  height: 100%;
+}
+.btn--primary {
+  background: $black;
+
+  color: white;
+}
+
+.btn--primary:hover {
+  background: $gold;
+}
+
+.btn--outline {
+  border: 1px solid $black;
+}
+
+.btn--outline:hover {
+  background: $black;
+
+  color: white;
+}
+
+.hero__image {
+  display: flex;
+
+  justify-content: center;
+}
+
+.hero__image img {
+  width: 100%;
+
+  max-width: 520px;
+}
+
+.hero__image img {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.scroll-indicator {
+  width: 28px;
+
+  height: 46px;
+
+  border: 2px solid $gold;
+
+  border-radius: 30px;
+
+  display: flex;
+
+  justify-content: center;
+
+  padding-top: 8px;
+}
+.scroll-indicator span {
+  width: 4px;
+
+  height: 8px;
+
+  border-radius: 10px;
+
+  background: $gold;
+
+  animation: wheel 1.6s infinite;
+}
+
+// @keyframes scroll {
+//   0% {
+//     transform: scaleY(0);
+
+//     transform-origin: top;
+//   }
+
+//   50% {
+//     transform: scaleY(1);
+//   }
+
+//   100% {
+//     transform: scaleY(0);
+
+//     transform-origin: bottom;
+//   }
+// }
+
+@keyframes wheel {
+  0% {
+    transform: translateY(0);
+
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(16px);
+
+    opacity: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero__container {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+  .hero__text {
+    margin: auto;
+  }
+
+  .hero__buttons {
+    justify-content: center;
+  }
+
+  .hero__title {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding-top: 120px;
+  }
+
+  .hero__title {
+    font-size: 52px;
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+  }
+
+  .hero__image img {
+    max-width: 300px;
+  }
+}
+
+.hero__glow {
+  position: absolute;
+
+  right: 8%;
+
+  top: 20%;
+
+  width: 500px;
+
+  height: 500px;
+
+  border-radius: 50%;
+
+  background: rgba(198, 169, 106, 0.18);
+
+  filter: blur(120px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.hero__noise {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.03;
+
+  pointer-events: none;
+
+  background-image: url("/noise.png");
+
+  mix-blend-mode: overlay;
+}

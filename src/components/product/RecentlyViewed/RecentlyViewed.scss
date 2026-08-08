@@ -1,0 +1,26 @@
+.recently-viewed {
+  padding: 120px 0;
+}
+.section-heading {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 60px;
+}
+.section-heading button {
+  background: none;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  color: #999;
+
+  transition: 0.3s;
+}
+.section-heading button:hover {
+  color: #111;
+}

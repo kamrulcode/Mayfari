@@ -1,0 +1,147 @@
+@use "../../../styles/abstracts/variables" as *;
+
+.navbar {
+  position: fixed;
+
+  inset: 0 0 auto 0;
+
+  width: 100%;
+
+  z-index: 999;
+
+  transition: $transition;
+
+  padding: 22px 0;
+
+  .container {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+  }
+}
+
+.navbar.active {
+  background: rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(18px);
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+}
+
+// logo
+
+.logo {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  color: $black;
+
+  span {
+    font-family: $heading;
+
+    font-size: 34px;
+
+    letter-spacing: 8px;
+  }
+
+  small {
+    font-size: 11px;
+
+    letter-spacing: 6px;
+  }
+}
+
+// menu button
+
+.menu-btn {
+  font-size: 28px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: $black;
+
+  transition: $transition;
+}
+
+.menu-btn:hover {
+  color: $gold;
+}
+
+.navbar-icons {
+  display: flex;
+
+  gap: 20px;
+
+  align-items: center;
+}
+
+.navbar-icons button {
+  position: relative;
+
+  display: grid;
+
+  place-items: center;
+
+  font-size: 22px;
+
+  transition: $transition;
+}
+
+// hover
+
+.navbar-icons button:hover {
+  color: $gold;
+
+  transform: translateY(-3px);
+}
+
+.cart span {
+  position: absolute;
+
+  top: -6px;
+
+  right: -6px;
+
+  width: 18px;
+
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: $gold;
+
+  color: white;
+
+  display: grid;
+
+  place-items: center;
+
+  font-size: 10px;
+}
+
+@media (max-width: 768px) {
+  .logo span {
+    font-size: 24px;
+
+    letter-spacing: 5px;
+  }
+
+  .logo small {
+    letter-spacing: 3px;
+  }
+
+  .navbar {
+    padding: 16px 0;
+  }
+
+  .navbar-icons {
+    gap: 14px;
+  }
+}

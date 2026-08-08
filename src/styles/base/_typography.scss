@@ -1,0 +1,38 @@
+@use "../abstracts/variables" as *;
+
+body {
+  font-family: $body;
+  color: $text;
+  background: $bg;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $heading;
+  color: $black;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: -2px;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+h3 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+p {
+  line-height: 1.8;
+
+  color: $color-muted;
+}
