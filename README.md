@@ -2,12 +2,14 @@
 
 > A modern luxury candle e-commerce website built with React.js and Vite, featuring an elegant, minimal interface designed to create a premium online shopping experience.
 
-<p align="center">
-  <img src="./mayfairss.png" alt="Mayfair Candles Website Preview" width="100%">
-</p>
+
 
 ---
 
+<table>
+  <tr>
+    <td>
+      
 ## ✨ Overview
 
 **Mayfair Candles** is a modern e-commerce frontend project for a luxury handcrafted candle brand.
@@ -15,16 +17,6 @@
 The website focuses on a clean and sophisticated visual experience with carefully designed product cards, collections, navigation, calls-to-action, and responsive layouts.
 
 The project was built to practice and demonstrate modern frontend development using **React.js, Vite, JavaScript, and responsive UI techniques**.
-
----
-
-## 🌐 Live Demo
-
-🔗 **Live Website:**  
-[View Live Demo](https://mayfairr.netlify.app/)
-
-🔗 **GitHub Repository:**  
-[View Source Code](YOUR_GITHUB_REPOSITORY_LINK)
 
 ---
 
@@ -45,6 +37,26 @@ The project was built to practice and demonstrate modern frontend development us
 - GitHub
 - VS Code
 - npm
+
+  ---
+  
+## 🌐 Live Demo
+
+🔗 **Live Website:**  
+[View Live Demo](https://mayfairr.netlify.app/)
+
+🔗 **GitHub Repository:**  
+[View Source Code](YOUR_GITHUB_REPOSITORY_LINK)
+
+      
+  </td>
+    <td>
+      <p align="center">
+  <img src="./screenshot.png" alt="Mayfair Candles Website Preview" width="100%">
+</p>
+    </td>
+  </tr>
+</table>
 
 ---
 
