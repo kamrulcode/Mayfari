@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 
 import useWishlist from "../../hooks/useWishlist";
-
 import ProductCard from "../../components/product/ProductCard/ProductCard";
+import "./Wishlist.scss";
 
 function Wishlist() {
   const { wishlist, clearWishlist } = useWishlist();
 
   if (wishlist.length === 0) {
     return (
-      <section className="wishlist-empty">
+      <section className="wishlist-page">
         <h1>Your Wishlist is Empty</h1>
 
         <p>Save your favorite candles and find them here later.</p>
@@ -24,7 +24,9 @@ function Wishlist() {
       <div className="wishlist-header">
         <h1>My Wishlist</h1>
 
-        <button onClick={clearWishlist}>Clear Wishlist</button>
+        <button type="button" onClick={clearWishlist}>
+          Clear Wishlist
+        </button>
       </div>
 
       <div className="wishlist-grid">

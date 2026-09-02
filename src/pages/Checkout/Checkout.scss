@@ -161,3 +161,116 @@
   color: #666;
   font-size: 13px;
 }
+.saved-addresses {
+  margin-bottom: 40px;
+}
+
+.saved-address-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+
+  h3 {
+    margin: 0;
+
+    font-family: serif;
+    font-size: 26px;
+    font-weight: 400;
+  }
+
+  span {
+    font-size: 11px;
+    color: #888;
+  }
+}
+
+.saved-address-list {
+  display: grid;
+  gap: 12px;
+}
+
+.saved-address {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  width: 100%;
+  padding: 20px;
+
+  background: #fff;
+
+  border: 1px solid #ddd;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.saved-address:hover {
+  border-color: #999;
+}
+
+.saved-address.selected {
+  border-color: #111;
+}
+
+.address-radio {
+  flex-shrink: 0;
+
+  font-size: 18px;
+  line-height: 1;
+}
+
+.address-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.address-details strong {
+  font-family: serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.address-details small {
+  width: fit-content;
+
+  margin: 2px 0;
+
+  padding: 4px 7px;
+
+  background: #111;
+  color: #fff;
+
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.address-details span {
+  color: #666;
+  font-size: 13px;
+}
+@media (max-width: 600px) {
+  .saved-address {
+    padding: 16px;
+  }
+
+  .saved-address-header {
+    h3 {
+      font-size: 22px;
+    }
+  }
+
+  .address-details strong {
+    font-size: 17px;
+  }
+}

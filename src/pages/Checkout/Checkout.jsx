@@ -12,6 +12,34 @@ function Checkout() {
 
     return saved ? JSON.parse(saved) : [];
   });
+  const [selectedAddressId, setSelectedAddressId] = useState(() => {
+    const saved = localStorage.getItem("mayfair-addresses");
+
+    const addresses = saved ? JSON.parse(saved) : [];
+
+    const defaultAddress = addresses.find((address) => address.isDefault);
+
+    return defaultAddress?.id ?? null;
+  });
+  const applyAddress = (address) => {
+    setSelectedAddressId(address.id);
+
+    setFormData((prev) => ({
+      ...prev,
+
+      firstName: address.name.split(" ")[0],
+
+      lastName: address.name.split(" ").slice(1).join(" "),
+
+      phone: address.phone,
+
+      address: address.address,
+
+      city: address.city,
+
+      postalCode: address.postalCode,
+    }));
+  };
 
   const [formData, setFormData] = useState({
     email: "",
@@ -133,37 +161,40 @@ function Checkout() {
             </div>
             {savedAddresses.length > 0 && (
               <div className="saved-addresses">
-                <h3>Saved Addresses</h3>
+                <div className="saved-address-header">
+                  <h3>Shipping Address</h3>
+
+                  <span>{savedAddresses.length} saved</span>
+                </div>
 
                 <div className="saved-address-list">
                   {savedAddresses.map((address) => (
                     <button
                       type="button"
                       key={address.id}
-                      onClick={() => {
-                        setFormData((prev) => ({
-                          ...prev,
-
-                          firstName: address.name.split(" ")[0],
-
-                          lastName: address.name.split(" ").slice(1).join(" "),
-
-                          phone: address.phone,
-
-                          address: address.address,
-
-                          city: address.city,
-
-                          postalCode: address.postalCode,
-                        }));
-                      }}
+                      className={
+                        selectedAddressId === address.id
+                          ? "saved-address selected"
+                          : "saved-address"
+                      }
+                      onClick={() => applyAddress(address)}
                     >
-                      <strong>{address.name}</strong>
+                      <span className="address-radio">
+                        {selectedAddressId === address.id ? "●" : "○"}
+                      </span>
 
-                      <span>{address.address}</span>
+                      <span className="address-details">
+                        <strong>{address.name}</strong>
 
-                      <span>
-                        {address.city}, {address.postalCode}
+                        {address.isDefault && <small>DEFAULT</small>}
+
+                        <span>{address.address}</span>
+
+                        <span>
+                          {address.city}, {address.postalCode}
+                        </span>
+
+                        <span>{address.phone}</span>
                       </span>
                     </button>
                   ))}

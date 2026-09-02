@@ -2,7 +2,7 @@ import "./MobileMenu.scss";
 
 import { FiX } from "react-icons/fi";
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 import { NavLink } from "react-router-dom";
 
 function MobileMenu({ open, setOpen }) {
@@ -10,38 +10,38 @@ function MobileMenu({ open, setOpen }) {
   const navRef = useRef(null);
   const bottomRef = useRef(null);
 
-  useEffect(() => {
-    if (!open) return;
+  // useEffect(() => {
+  //   if (!open) return;
 
-    gsap.fromTo(
-      navRef.current.children,
-      {
-        opacity: 0,
-        x: -40,
-      },
-      {
-        opacity: 1,
-        x: 0,
-        stagger: 0.08,
-        duration: 0.8,
-        ease: "power3.out",
-      },
-    );
+  //   gsap.fromTo(
+  //     navRef.current.children,
+  //     {
+  //       opacity: 0,
+  //       x: -40,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       x: 0,
+  //       stagger: 0.08,
+  //       duration: 0.8,
+  //       ease: "power3.out",
+  //     },
+  //   );
 
-    gsap.fromTo(
-      bottomRef.current,
-      {
-        opacity: 0,
-        y: 40,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        delay: 0.4,
-        duration: 0.7,
-      },
-    );
-  }, [open]);
+  //   gsap.fromTo(
+  //     bottomRef.current,
+  //     {
+  //       opacity: 0,
+  //       y: 40,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       delay: 0.4,
+  //       duration: 0.7,
+  //     },
+  //   );
+  // }, [open]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "auto";

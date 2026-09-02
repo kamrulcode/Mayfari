@@ -1,4 +1,4 @@
-.login-page {
+.signup-page {
   min-height: 100vh;
 
   display: flex;
@@ -10,11 +10,11 @@
   background: #f8f8f6;
 }
 
-.login-container {
+.signup-container {
   width: min(480px, 100%);
 }
 
-.login-header {
+.signup-header {
   margin-bottom: 45px;
 
   text-align: center;
@@ -46,11 +46,9 @@
   }
 }
 
-.login-form {
+.signup-form {
   padding: 35px;
-
   background: #fff;
-
   border: 1px solid #e8e8e5;
 }
 
@@ -88,9 +86,10 @@
     border-bottom: 1px solid #ccc;
 
     outline: none;
-    color: #111;
+
     font-family: inherit;
     font-size: 14px;
+    color: #111;
 
     transition: border-color 0.25s ease;
 
@@ -104,7 +103,7 @@
   }
 }
 
-.login-submit {
+.signup-submit {
   width: 100%;
 
   padding: 17px;
@@ -130,7 +129,7 @@
   }
 }
 
-.login-footer {
+.signup-footer {
   display: flex;
   justify-content: center;
   gap: 7px;
@@ -160,42 +159,5 @@
 
   &:hover {
     color: #111;
-  }
-}
-
-@media (max-width: 600px) {
-  .login-page {
-    padding: 110px 18px 70px;
-  }
-
-  .login-header {
-    margin-bottom: 35px;
-
-    h1 {
-      font-size: 54px;
-    }
-  }
-
-  .login-form {
-    padding: 25px 20px;
-  }
-}
-.forgot-password {
-  margin-top: -10px;
-  margin-bottom: 25px;
-
-  text-align: right;
-
-  a {
-    color: #777;
-
-    font-size: 11px;
-
-    text-decoration: none;
-
-    &:hover {
-      color: #111;
-      text-decoration: underline;
-    }
   }
 }

@@ -14,6 +14,9 @@ import OrderTracking from "../pages/OrderTracking/OrderTracking";
 import Account from "../pages/Account.jsx/Account";
 import MyOrders from "../pages/Account.jsx/MyOrders";
 import Addresses from "../pages/Account.jsx/Addresses/Addresses";
+import Signup from "../pages/Signup/Signup";
+import ProtectedRoute from "../components/Auth/ProtectedRoute";
+import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 
 export const router = createBrowserRouter([
   {
@@ -53,16 +56,30 @@ export const router = createBrowserRouter([
         element: <OrderTracking />,
       },
       {
-        path: "account",
-        element: <Account />,
+        path: "forgot-password",
+        element: <ForgotPassword />,
       },
       {
-        path: "account/orders",
-        element: <MyOrders />,
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: "account",
+            element: <Account />,
+          },
+          {
+            path: "account/orders",
+            element: <MyOrders />,
+          },
+          {
+            path: "account/addresses",
+            element: <Addresses />,
+          },
+        ],
       },
+
       {
-        path: "account/addresses",
-        element: <Addresses />,
+        path: "signup",
+        element: <Signup />,
       },
     ],
   },

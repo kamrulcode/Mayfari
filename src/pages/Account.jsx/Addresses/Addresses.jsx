@@ -62,7 +62,7 @@ function Addresses() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (editingId) {
+    if (editingId !== null) {
       const updatedAddresses = addresses.map((address) =>
         address.id === editingId
           ? {
@@ -77,7 +77,7 @@ function Addresses() {
       setEditingId(null);
     } else {
       const newAddress = {
-        id: Date.now(),
+        id: crypto.randomUUID(),
         ...formData,
         isDefault: addresses.length === 0,
       };

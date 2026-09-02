@@ -2,15 +2,12 @@
 
 .hero {
   min-height: 100vh;
-
   display: flex;
-
   align-items: center;
-
+  // flex-direction: column;
   background:
     radial-gradient(circle at right, #fff5dd 0%, transparent 45%), #f8f8f6;
   overflow: hidden;
-
   position: relative;
 }
 
@@ -60,60 +57,55 @@
 
 .btn {
   padding: 16px 34px;
-
   border-radius: 50px;
-
   transition: 0.35s;
-
   font-weight: 600;
   overflow: hidden;
-
   position: relative;
 }
 
 .btn span {
   position: relative;
-
   z-index: 2;
 }
-.btn::before {
-  content: "";
+// .btn::before {
+//   content: "";
 
-  position: absolute;
+//   position: absolute;
 
-  left: 0;
+//   left: 0;
 
-  bottom: 0;
+//   bottom: 0;
 
-  width: 100%;
+//   width: 100%;
 
-  height: 0;
+//   height: 0;
 
-  background: $gold;
+//   background: $gold;
 
-  transition: 0.4s;
-}
-.btn:hover::before {
-  height: 100%;
-}
+//   transition: 0.4s;
+// }
+// .btn:hover::before {
+//   height: 100%;
+// }
 .btn--primary {
-  background: $black;
-
-  color: white;
+  background: #171717;
+  color: #fff;
 }
 
 .btn--primary:hover {
-  background: $gold;
+  background: #b69652;
 }
 
 .btn--outline {
-  border: 1px solid $black;
+  background: transparent;
+  color: #171717;
+  border: 1px solid #171717;
 }
 
 .btn--outline:hover {
-  background: $black;
-
-  color: white;
+  background: #181818;
+  color: #fff;
 }
 
 .hero__image {
@@ -145,17 +137,16 @@
 
 .scroll-indicator {
   width: 28px;
-
   height: 46px;
-
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
   border: 2px solid $gold;
 
   border-radius: 30px;
 
   display: flex;
-
   justify-content: center;
-
   padding-top: 8px;
 }
 .scroll-indicator span {

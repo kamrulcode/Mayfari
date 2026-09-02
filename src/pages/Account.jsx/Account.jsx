@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Account.scss";
+import { useAuth } from "../../context/AuthContext";
 
 function Account() {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
   return (
     <main className="account-page">
       <div className="account-container">
         <div className="account-header">
           <span>MY ACCOUNT</span>
-          <h1>Welcome back</h1>
+          <h1>Welcome back, {user?.name}</h1>
           <p>Manage your orders, wishlist, addresses and account settings.</p>
         </div>
 
@@ -28,6 +31,15 @@ function Account() {
             <Link to="/account/settings">Account Settings</Link>
 
             <Link to="/">Continue Shopping</Link>
+            <button
+              className="logout-btn"
+              onClick={() => {
+                logout();
+                navigate("/login");
+              }}
+            >
+              Log Out
+            </button>
           </aside>
 
           <section className="account-content">

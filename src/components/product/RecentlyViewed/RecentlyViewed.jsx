@@ -1,59 +1,43 @@
+import { Link } from "react-router-dom";
+
+import useRecentlyViewed from "../../../hooks/useRecentlyViewed";
+
 import "./RecentlyViewed.scss";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-
-import useLocalStorage from "../../../hooks/useLocalStorage";
-import ProductCard from "../../ProductCard/ProductCard";
-
 function RecentlyViewed() {
-  const [history, setHistory] = useLocalStorage(
-    "recent-products",
+  const { recentlyViewed } = useRecentlyViewed();
 
-    [],
-  );
-
-  const clearHistory = () => {
-    setHistory([]);
-  };
-
-  if (history.length === 0) return null;
-
-  const remove = (id) => {
-    setHistory(history.filter((item) => item.id !== id));
-  };
+  if (recentlyViewed.length === 0) {
+    return null;
+  }
 
   return (
     <section className="recently-viewed">
-      <div className="section-heading">
-        <h2>Recently Viewed</h2>
+      <div className="recently-viewed-heading">
+        <span>DISCOVER MORE</span>
 
-        <button onClick={clearHistory}>Clear</button>
+        <h2>Recently Viewed</h2>
       </div>
 
-      <Swiper
-        spaceBetween={25}
-        breakpoints={{
-          320: {
-            slidesPerView: 1.2,
-          },
+      <div className="recently-viewed-grid">
+        {recentlyViewed.map((product) => (
+          <Link
+            key={product.id}
+            to={`/product/${product.slug}`}
+            className="recently-viewed-card"
+          >
+            <div className="recently-viewed-image">
+              <img src={product.image} alt={product.name} />
+            </div>
 
-          768: {
-            slidesPerView: 2,
-          },
+            <div className="recently-viewed-info">
+              <h3>{product.name}</h3>
 
-          1200: {
-            slidesPerView: 4,
-          },
-        }}
-      >
-        {history.map((product) => (
-          <SwiperSlide key={product.id}>
-            <ProductCard product={product} onRemove={remove} />
-          </SwiperSlide>
+              <span>${product.price}</span>
+            </div>
+          </Link>
         ))}
-      </Swiper>
+      </div>
     </section>
   );
 }

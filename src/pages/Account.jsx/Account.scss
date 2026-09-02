@@ -177,3 +177,24 @@
     }
   }
 }
+.logout-btn {
+  margin-top: 20px;
+
+  padding: 12px 0;
+
+  background: transparent;
+
+  border: 0;
+
+  color: #777;
+
+  font-size: 13px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  &:hover {
+    color: #111;
+  }
+}
