@@ -120,3 +120,119 @@ The project uses the following main dependencies:
 ```bash
 react
 react-dom
+
+```
+---
+
+## 💻 Run This Project Locally
+
+Follow these steps to run the project on your local machine.
+
+1. Clone the repository
+git clone YOUR_GITHUB_REPOSITORY_LINK
+2. Navigate into the project
+cd mayfair-candles
+3. Install dependencies
+npm install
+4. Start the development server
+npm run dev
+5. Open the project
+
+Vite will provide a local development URL similar to:
+
+http://localhost:5173
+
+Open it in your browser.
+
+## 📁 Project Structure
+
+```text
+mayfair-candles/
+│
+├── public/
+│   └── assets/
+│
+├── src/
+│   ├── assets/
+│   │
+│   ├── components/
+│   │   ├── Navbar/
+│   │   ├── Hero/
+│   │   ├── Categories/
+│   │   ├── ProductCard/
+│   │   ├── BestSellers/
+│   │   └── Footer/
+│   │
+│   ├── pages/
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── screenshot.png
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+
+```
+
+The exact structure may vary depending on the final project implementation.
+
+## 🎯 Learning Goals
+
+This project was created to improve practical frontend development skills, including:
+
+- Building reusable React components
+- Managing component-based UI
+- Creating responsive layouts
+- Working with product data
+-  Creating reusable product cards
+- Implementing interactive UI elements
+- Improving CSS layout and styling
+- Building a real-world e-commerce interface
+- Structuring a React project professionally
+- 📱 Responsive Design
+
+The website is designed to provide a consistent experience across:
+
+- 💻 Desktop
+- 💻 Laptop
+- 📱 Tablet
+- 📱 Mobile
+- 🔮 Future Improvements
+
+Some features that can be added in future versions:
+
+```text
+ Product details page
+ Shopping cart functionality
+ Wishlist page
+ Product search
+ Product filtering
+ Product sorting
+ Checkout page
+ Authentication
+ Backend API integration
+ Database integration
+ Payment integration
+ Admin dashboard
+
+```
+
+## 👨‍💻 Author
+
+**MD. Kamrul Islam**
+
+Frontend Developer passionate about creating modern, responsive, and user-friendly web experiences.
+
+Connect With Me
+GitHub: @kamrulcode
+
+## 📄 License
+
+This project is created for learning and portfolio purposes.
+
+---
+
+⭐ **If you like this project, consider giving it a star** !
