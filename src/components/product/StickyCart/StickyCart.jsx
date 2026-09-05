@@ -32,7 +32,6 @@ function StickyCart({ product }) {
       <div className="sticky-cart__content">
         <div className="sticky-cart__product">
           <span>Luxury Candle</span>
-
           <h4>Vanilla Dream</h4>
           <p className="stock">Only 8 left in stock</p>
         </div>
