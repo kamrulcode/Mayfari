@@ -17,6 +17,7 @@ import Addresses from "../pages/Account.jsx/Addresses/Addresses";
 import Signup from "../pages/Signup/Signup";
 import ProtectedRoute from "../components/Auth/ProtectedRoute";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
+import GiftBox from "../pages/GiftBox/GiftBox";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
         path: "cart",
         element: <Cart />,
       },
+      {
+  path: "/gift-box",
+  element: <GiftBox />,
+},
       {
         path: "wishlist",
         element: <Wishlist />,

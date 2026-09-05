@@ -10,6 +10,7 @@ import useCart from "../../../hooks/useCart";
 import useWishlist from "../../../hooks/useWishlist";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
+import SearchOverlay from "../../SearchOverlay/SearchOverlay";
 
 function Navbar() {
   const { user, isAuthenticated, logout } = useAuth();
@@ -44,7 +45,7 @@ function Navbar() {
 
         <div className="navbar-icons">
           <Link className="navbar-icon">
-            <FiSearch />
+            <FiSearch onClick={() => window.dispatchEvent(new Event("open-search"))}/>
           </Link>
 
           <NavLink

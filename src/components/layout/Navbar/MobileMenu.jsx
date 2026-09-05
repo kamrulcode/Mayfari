@@ -86,7 +86,9 @@ function MobileMenu({ open, setOpen }) {
 
           <NavLink to="/">Collections</NavLink>
 
-          <NavLink to="/">Gift Boxes</NavLink>
+          <NavLink to="/gift-box">
+  Gift Boxs
+</NavLink>
 
           <NavLink to="/">Journal</NavLink>
 
